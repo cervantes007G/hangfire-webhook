@@ -1,0 +1,10 @@
+{
+  "name": "hangfire-webhook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cervantes007G/hangfire-webhook.git",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

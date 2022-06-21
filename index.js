@@ -1,8 +1,10 @@
 const express = require("express");
 
-const webhooks = [];
+let webhooks = [];
 
 const app = express();
+
+app.use(express.json());
 
 app.get("", (req, res) => {
     res.send("Hello World");
@@ -17,8 +19,13 @@ app.get("/hangfire", (req, res) => {
     res.json(webhooks);
 })
 
+app.delete("/hangfire", (req, res) => {
+    webhooks = [];
+    res.json(webhooks);
+})
+
 app.listen(process.env.PORT, () => {
-    console.log("Running on port 4000.");
+    console.log(`Running on port ${process.env.PORT}.`);
 });
 
 // Export the Express API
